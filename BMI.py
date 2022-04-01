@@ -4,21 +4,27 @@ print("\n")
 print("BML CALCULATOR")
 print("\n")
 
-weight = float(input("Enter your weight(LB)"))
-height = float(input("Enter your height(FEET)"))
+answer = ("y")
+while answer == "y":
+    print("\n")
+    weight = float(input("Enter your weight(LB)"))
+    height = float(input("Enter your height(FEET)"))
 
-try:
-    value =  weight/(height**2) #BMI FORMULA
-except:
-    print("You cannot devide 0")
+    try:
+        value =  weight/(height**2) #BMI FORMULA
+    except:
+        print("You cannot devide 0, check your values another time")
+        break
 
-if value < 18.5:
-    print(round(value,2) , " underweight")
-elif value >= 18.5 and value < 25:
-    print(round(value,2) , " Normal")
-elif value >= 25 and value < 30:
-    print(round(value,2) , " Overweight")
-elif value >= 30:
-    print(round(value,2) , " Obesity")
-else:
-    print("error")
+    if value < 18.5:
+        print(round(value,2) , " underweight")
+    elif value >= 18.5 and value < 25:
+        print(round(value,2) , " Normal")
+    elif value >= 25 and value < 30:
+        print(round(value,2) , " Overweight")
+    elif value >= 30:
+        print(round(value,2) , " Obesity")
+    else:
+        print("error")
+    print("\n")
+    answer = input("Wanna try one more time? ")
